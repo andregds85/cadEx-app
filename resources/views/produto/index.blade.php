@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -61,8 +62,6 @@
                             </div>
                         </div>
 
-                        
-
                             
 
                         
@@ -79,19 +78,15 @@
                             	<option value="6">6</option>
                                 </select>
                                 </div>
-
-
                                 <fieldset id="children">
 
                                 </fieldset><!-- #children -->
-
-
-                                </div>
+                               </div>
                         </div>
 
 
 
-
+                        
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
@@ -157,6 +152,17 @@ $chidrenQnt.on('change', function(){
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
             </div>
         </div>
     </div>
