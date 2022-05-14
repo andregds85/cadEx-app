@@ -1,8 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
-
-
 <?php 
 use App\Models\Produto;
 use App\Http\Controllers\ProdutoController;
@@ -48,8 +45,7 @@ use App\Http\Controllers\ProdutoController;
                             </div>
                         </div>
 
-                              
-                        
+
                         <!-- Campo quantidade -->
                         <div class="row mb-3">
                             <label for="preco" class="col-md-4 col-form-label text-md-end">{{ __('Quantidade') }}</label>
@@ -62,7 +58,6 @@ use App\Http\Controllers\ProdutoController;
                                 @enderror
                             </div>
                         </div>
-
 
 
                         
@@ -80,14 +75,10 @@ use App\Http\Controllers\ProdutoController;
                                 </select>
                                 </div>
                                 <fieldset id="children">
-
                                 </fieldset><!-- #children -->
                                </div>
                         </div>
-
-
-
-                        
+                    
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
@@ -95,12 +86,12 @@ var $chidrenQnt = jQuery('#children-qnt'),
 	$children = jQuery('#children');
 
 
-
+    
 var Children = {};
 Children.container = $children;
 Children.add = function(i) {
 	while (i--) {
-		Children.container.append('<label>Gestante: <input type="text" name="qasdasd"></label>');
+		Children.container.append('<label>Gestante: <input type="text" name="gestante"></label>');
 	}
 }
 Children.remove = function(i) {

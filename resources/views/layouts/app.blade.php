@@ -75,9 +75,6 @@
 
 
 
-
-
-
                             <!-- item 1 --> 
                               <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -85,39 +82,61 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" href="{{ route('logout') }}">
+                                      
                                         {{ __('Sair') }}
                                     </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                           
                                 </div>
 
 
                                  
                                 
                                                     
-                            <!-- item 1 --> 
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ url('home') }}"  aria-expanded="false" v-pre>
-                                    Inicio  </a>
-                                    </li>
+                                      
+
 
 
 
                                 
+
                             <!-- item 1 --> 
-                              <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ url('produto') }}"  aria-expanded="false" v-pre>
-                                    Produtos  </a>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                   Produtos
+                                </a>
 
-                                    </li>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url('produto') }}">
+
+                                        Cadastrar 
+
+                                   </a>
+
+                                      <!-- Sub Item 2 --> 
+                                   <a class="dropdown-item" href="{{ url('produto') }}">
+                                    Listar 
+
+                                   </a>
+
+                                </div>
 
 
-                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

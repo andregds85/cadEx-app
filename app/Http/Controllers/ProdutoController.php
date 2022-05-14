@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 
 class ProdutoController  extends Controller
 {
-      
-    public function index()
+      public function index()
     {
      return view('Produto.index');
     }
@@ -19,10 +18,10 @@ class ProdutoController  extends Controller
               
         ]);    
         Produto::create($request->all());
-         return view('Produto.index'); 
-  
+        echo "<script> alert('Cadastro Efetuado com Sucesso'); </script>";
+        return view('/home');
+
       }
 
 }
-
 
