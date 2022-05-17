@@ -61,61 +61,60 @@ use App\Http\Controllers\ProdutoController;
 
 
                         
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Gestante') }}</label>
+                        <div class="form-group row" required>
 
-                                <select name="gestante" id="children-qnt">
-	                            <option value="0">0</option>
-                            	<option value="1">1</option>
-                            	<option value="2">2</option>
-	                            <option value="3">3</option>
-                               	<option value="4">4</option>
-                                <option value="5">5</option>
-                            	<option value="6">6</option>
-                                </select>
-                                </div>
-                                <fieldset id="children">
-                                </fieldset><!-- #children -->
-                               </div>
-                        </div>
-                    
+<label for="gestante" class="col-md-4 col-form-label text-md-right">{{ __('Gestante') }}</label>
+<div class="col-md-6">
+
+         <select name="gestante" id="children-qnt" class="form-control">
+         <option value="0">Falta Preencher</option>
+         <option value="0">Não</option>
+         <option value="1">Sim</option>
+
+         </select>
+         <fieldset id="children">
+         </fieldset><!-- #children -->
+ </div>
+</div>
+
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
 var $chidrenQnt = jQuery('#children-qnt'),
-	$children = jQuery('#children');
+$children = jQuery('#children');
 
 
-    
+
 var Children = {};
 Children.container = $children;
 Children.add = function(i) {
-	while (i--) {
-		Children.container.append('<label>Gestante: <input type="text" name="gestante"></label>');
-	}
+while (i--) {
+    Children.container.append('<label>Se o nascimento for no Destino ? Quem Recebe <textarea class="form-control" name="nasceDestino" rows="3"></textarea></label>');
+}
 }
 Children.remove = function(i) {
-	while (i--) {
-		Children.container.find('label:last').remove();
-	}
+while (i--) {
+Children.container.find('label:last').remove();
+}
 }
 
 
 $chidrenQnt.on('change', function(){
-	var $this = jQuery(this),
-		i = $this.val(),
-		qnt = $children.find('label').length;
+var $this = jQuery(this),
+i = $this.val(),
+qnt = $children.find('label').length;
 
 
-	if (qnt > i) {
-		Children.remove(qnt - i);
-	}
-	if (qnt < i) {
-		Children.add(i - qnt);
-	}
+if (qnt > i) {
+Children.remove(qnt - i);
+}
+if (qnt < i) {
+Children.add(i - qnt);
+}
 });
 
 </script>
+
 
 
 

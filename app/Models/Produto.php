@@ -13,7 +13,9 @@ class Produto extends Model
       'nome',
       'preco',
       'quantidade',
-      'gestante'
+      'gestante',
+      'nasceDestino'
+
    ];
 
 
