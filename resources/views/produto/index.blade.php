@@ -61,8 +61,7 @@ use App\Http\Controllers\ProdutoController;
 
 
                         
-                        <div class="form-group row" required>
-
+<div class="form-group row" required>
 <label for="gestante" class="col-md-4 col-form-label text-md-right">{{ __('Gestante') }}</label>
 <div class="col-md-6">
 
@@ -89,7 +88,7 @@ var Children = {};
 Children.container = $children;
 Children.add = function(i) {
 while (i--) {
-    Children.container.append('<label>Se o nascimento for no Destino ? Quem Recebe <textarea class="form-control" name="nasceDestino" rows="3"></textarea></label>');
+    Children.container.append('<textarea class="form-control" name="nasceDestino" rows="3"></textarea>');
 }
 }
 Children.remove = function(i) {
@@ -114,22 +113,6 @@ Children.add(i - qnt);
 });
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
