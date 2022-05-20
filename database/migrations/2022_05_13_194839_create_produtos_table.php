@@ -16,6 +16,8 @@ class CreateProdutosTable extends Migration
             $table->string('quantidade');
             $table->string('gestante')->nullable();
             $table->string('nasceDestino')->nullable();
+            $table->string('acessoVenosoCentral')->nullable();
+            $table->string('avcOnde')->nullable();
             $table->timestamps();
         });
   

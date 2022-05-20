@@ -14,12 +14,15 @@ class Produto extends Model
       'preco',
       'quantidade',
       'gestante',
-      'nasceDestino'
-
+      'nasceDestino',
+      'acessoVenosoCentral',
+      'avcOnde'
    ];
 
-
 }
+
+
+
 
 
 

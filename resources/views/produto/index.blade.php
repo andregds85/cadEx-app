@@ -88,8 +88,9 @@ var Children = {};
 Children.container = $children;
 Children.add = function(i) {
 while (i--) {
-    Children.container.append('<textarea class="form-control" name="nasceDestino" rows="3"></textarea>');
+    Children.container.append('<label>Quem Recebe a Gestante : ? <textarea class="form-control" name="nasceDestino" rows="3"></textarea></label>');
 }
+
 }
 Children.remove = function(i) {
 while (i--) {
@@ -113,6 +114,87 @@ Children.add(i - qnt);
 });
 
 </script>
+
+
+
+                        
+<div class="form-group row" required>
+<label for="gestante" class="col-md-4 col-form-label text-md-right">{{ __('Acesso Venoso Central') }}</label>
+<div class="col-md-6">
+
+         <select name="acessoVenosoCentral" id="acesso-qnt" class="form-control">
+         <option value="0">Falta Preencher</option>
+         <option value="0">Não</option>
+         <option value="1">Sim</option>
+
+         </select>
+         <fieldset id="acesso">
+         </fieldset><!-- #children -->
+ </div>
+</div>
+
+
+
+<script type="text/javascript">
+var $acessoQnt = jQuery('#acesso-qnt'),
+$acesso = jQuery('#acesso');
+
+
+var acesso = {};
+acesso.container = $acesso;
+acesso.add = function(i) {
+while (i--) {
+    acesso.container.append('<label>Onde ? Acesso Venoso Central : ? <textarea class="form-control" name="avcOnde" rows="3"></textarea></label>');
+}
+
+}
+acesso.remove = function(i) {
+while (i--) {
+acesso.container.find('label:last').remove();
+}
+}
+
+
+$acessoQnt.on('change', function(){
+var $this = jQuery(this),
+i = $this.val(),
+qnt = $acesso.find('label').length;
+
+
+if (qnt > i) {
+acesso.remove(qnt - i);
+}
+if (qnt < i) {
+acesso.add(i - qnt);
+}
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
