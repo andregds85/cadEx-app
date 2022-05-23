@@ -6,6 +6,67 @@ use App\Http\Controllers\ProdutoController;
 ?>
 
 
+<SCRIPT> 
+<!--
+function valida()
+{
+
+if(document.regform.nome.value=="" || document.regform.nome.value.length < 8)
+{
+alert( "Preencha campo Nome com Nome Completo!" );
+regform.nome.focus();
+return false;
+}
+
+
+
+if(document.regform.preco.value.length < 4  || document.regform.preco.value.length > 10)
+{
+alert( "Preencha campo Preço corretamente Ex: 1,00 ");
+regform.preco.focus();
+return false;
+}
+
+
+if(document.regform.quantidade.value.length < 1  || document.quantidade.preco.value="")
+{
+alert( "Preencha campo Quantida corretamente");
+regform.preco.focus();
+return false;
+}
+
+
+
+if(document.regform.quantidade.value.length < 1  || document.quantidade.preco.value="")
+{
+alert( "Preencha campo Quantida corretamente");
+regform.preco.focus();
+return false;
+}
+
+return true;
+}
+</script>
+
+
+
+
+<script>
+function onlynumber(evt) {
+   var theEvent = evt || window.event;
+   var key = theEvent.keyCode || theEvent.which;
+   key = String.fromCharCode( key );
+   //var regex = /^[0-9.,]+$/;
+   var regex = /^[0-9.]+$/;
+   if( !regex.test(key) ) {
+      theEvent.returnValue = false;
+      if(theEvent.preventDefault) theEvent.preventDefault();
+   }
+}
+</script>
+
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -46,6 +107,7 @@ use App\Http\Controllers\ProdutoController;
                         </div>
 
 
+
                         <!-- Campo quantidade -->
                         <div class="row mb-3">
                             <label for="preco" class="col-md-4 col-form-label text-md-end">{{ __('Quantidade') }}</label>
@@ -60,7 +122,7 @@ use App\Http\Controllers\ProdutoController;
                         </div>
 
 
-                        
+             
 <div class="form-group row" required>
 <label for="gestante" class="col-md-4 col-form-label text-md-right">{{ __('Gestante') }}</label>
 <div class="col-md-6">
@@ -72,9 +134,11 @@ use App\Http\Controllers\ProdutoController;
 
          </select>
          <fieldset id="children">
-         </fieldset><!-- #children -->
+         </fieldset>
  </div>
 </div>
+
+
 
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -116,7 +180,6 @@ Children.add(i - qnt);
 </script>
 
 
-
                         
 <div class="form-group row" required>
 <label for="gestante" class="col-md-4 col-form-label text-md-right">{{ __('Acesso Venoso Central') }}</label>
@@ -129,10 +192,9 @@ Children.add(i - qnt);
 
          </select>
          <fieldset id="acesso">
-         </fieldset><!-- #children -->
+         </fieldset>
  </div>
 </div>
-
 
 
 <script type="text/javascript">
@@ -154,7 +216,6 @@ acesso.container.find('label:last').remove();
 }
 }
 
-
 $acessoQnt.on('change', function(){
 var $this = jQuery(this),
 i = $this.val(),
@@ -168,7 +229,123 @@ if (qnt < i) {
 acesso.add(i - qnt);
 }
 });
+</script>
 
+
+
+
+
+<div class="form-group row" required>
+<label for="contato" class="col-md-4 col-form-label text-md-right">{{ __('Contato') }}</label>
+<div class="col-md-6">
+
+         <select name="Contato" id="contato-qnt" class="form-control">
+         <option value="0">Falta Preencher</option>
+         <option value="0">Não</option>
+         <option value="1">Sim</option>
+
+         </select>
+         <fieldset id="contato">
+         </fieldset>
+ </div>
+</div>
+
+
+<script type="text/javascript">
+var $contatoQnt = jQuery('#contato-qnt'),
+$contato = jQuery('#contato');
+
+
+var contato = {};
+contato.container = $contato;
+contato.add = function(i) {
+while (i--) {
+    contato.container.append('<label> Motivo do Contato : ? <textarea class="form-control" name="motivoContato" rows="3"></textarea></label>');
+}
+
+}
+contato.remove = function(i) {
+while (i--) {
+contato.container.find('label:last').remove();
+}
+}
+
+$contatoQnt.on('change', function(){
+var $this = jQuery(this),
+i = $this.val(),
+qnt = $contato.find('label').length;
+
+
+if (qnt > i) {
+contato.remove(qnt - i);
+}
+if (qnt < i) {
+contato.add(i - qnt);
+}
+});
+</script>
+
+
+<!-- respiratoria e motivo da Respiratoria -->
+<div class="form-group row" required>
+<label for="respiratoria" class="col-md-4 col-form-label text-md-right">{{ __('Respiratória') }}</label>
+<div class="col-md-6">
+
+         <select name="respiratoria" id="respiratoria-qnt" class="form-control">
+         <option value="0">Falta Preencher</option>
+         <option value="0">Não</option>
+         <option value="1">Sim</option>
+
+         </select>
+         <fieldset id="respiratoria">
+         </fieldset>
+ </div>
+</div>
+
+
+<script type="text/javascript">
+var $respiratoriaQnt = jQuery('#respiratoria-qnt'),
+$respiratoria = jQuery('#respiratoria');
+
+
+var respiratoria = {};
+respiratoria.container = $respiratoria;
+respiratoria.add = function(i) {
+while (i--) {
+    respiratoria.container.append('<label> Motivo da Respirátoria : ? <textarea class="form-control" name="motivoRespiratoria" rows="3"></textarea></label>');
+}
+
+}
+respiratoria.remove = function(i) {
+while (i--) {
+respiratoria.container.find('label:last').remove();
+}
+}
+
+$respiratoriaQnt.on('change', function(){
+var $this = jQuery(this),
+i = $this.val(),
+qnt = $respiratoria.find('label').length;
+
+
+if (qnt > i) {
+respiratoria.remove(qnt - i);
+}
+if (qnt < i) {
+respiratoria.add(i - qnt);
+}
+});
+</script>
+
+
+
+
+<script>
+if(nome_formuario.nome_do_select.selectedIndex==0){
+            alert("Informe o status do contrato");
+            form.st_contrato.focus();
+            return false;
+        }
 </script>
 
 

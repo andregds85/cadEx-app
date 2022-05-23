@@ -16,7 +16,11 @@ class Produto extends Model
       'gestante',
       'nasceDestino',
       'acessoVenosoCentral',
-      'avcOnde'
+      'avcOnde',
+      'Contato',
+      'motivoContato',
+      'respiratoria',
+      'motivoRespiratoria',
    ];
 
 }

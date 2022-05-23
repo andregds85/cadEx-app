@@ -18,6 +18,10 @@ class CreateProdutosTable extends Migration
             $table->string('nasceDestino')->nullable();
             $table->string('acessoVenosoCentral')->nullable();
             $table->string('avcOnde')->nullable();
+            $table->string('Contato')->nullable();
+            $table->string('motivoContato')->nullable();
+            $table->string('respiratoria')->nullable();
+            $table->string('motivoRespiratoria')->nullable();
             $table->timestamps();
         });
   
