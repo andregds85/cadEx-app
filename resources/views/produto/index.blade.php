@@ -28,25 +28,33 @@ return false;
 }
 
 
-if(document.regform.quantidade.value.length < 1  || document.quantidade.preco.value="")
-{
-alert( "Preencha campo Quantida corretamente");
-regform.preco.focus();
-return false;
-}
-
-
-
-if(document.regform.quantidade.value.length < 1  || document.quantidade.preco.value="")
-{
-alert( "Preencha campo Quantida corretamente");
-regform.preco.focus();
-return false;
-}
 
 return true;
 }
-</script>
+ 
+//-->
+</SCRIPT>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -64,6 +72,11 @@ function onlynumber(evt) {
    }
 }
 </script>
+
+
+
+
+
 
 
 
@@ -121,14 +134,13 @@ function onlynumber(evt) {
                             </div>
                         </div>
 
-
              
 <div class="form-group row" required>
 <label for="gestante" class="col-md-4 col-form-label text-md-right">{{ __('Gestante') }}</label>
 <div class="col-md-6">
 
          <select name="gestante" id="children-qnt" class="form-control">
-         <option value="0">Falta Preencher</option>
+         <option value="0"></option>
          <option value="0">Não</option>
          <option value="1">Sim</option>
 
@@ -137,6 +149,8 @@ function onlynumber(evt) {
          </fieldset>
  </div>
 </div>
+
+
 
 
 
@@ -178,6 +192,8 @@ Children.add(i - qnt);
 });
 
 </script>
+
+
 
 
                         
@@ -340,21 +356,6 @@ respiratoria.add(i - qnt);
 
 
 
-<script>
-if(nome_formuario.nome_do_select.selectedIndex==0){
-            alert("Informe o status do contrato");
-            form.st_contrato.focus();
-            return false;
-        }
-</script>
-
-
-
-
-
-
-
-
 
 
 
@@ -378,9 +379,7 @@ if(nome_formuario.nome_do_select.selectedIndex==0){
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
+                                <input type="submit" class="btn btn-primary" onclick="validac()" Value="Cadastrar">
                             </div>
                         </div>
                     </form>
