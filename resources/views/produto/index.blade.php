@@ -18,15 +18,22 @@ regform.nome.focus();
 return false;
 }
 
-
-
-if(document.regform.preco.value.length < 4  || document.regform.preco.value.length > 10)
-{
-alert( "Preencha campo Preço corretamente Ex: 1,00 ");
-regform.preco.focus();
-return false;
+ if(document.regform.preco.value.length < 4  || document.regform.preco.value.length > 10)
+    {
+    alert( "Preencha campo Preço corretamente Ex: 1,00 ");
+    regform.preco.focus();
+    return false;
 }
 
+
+    if (document.regform.gestante.value.length == 0 )   
+     {
+    alert('Falta escolher a Gestante');
+    regform.gestante.focus();
+    return false;
+    }
+
+    
 
 
 return true;
@@ -34,28 +41,6 @@ return true;
  
 //-->
 </SCRIPT>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -73,11 +58,14 @@ function onlynumber(evt) {
 }
 </script>
 
-
-
-
-
-
+<script language="javascript" >
+    function combo() {
+        var comboNome = document.getElementById("gestantante");
+        if (comboNome.options[comboNome.selectedIndex].value == "" ){
+                alert("Selecione um nome antes de prosseguir");
+        }
+    }    
+</script>
 
 
 <div class="container">
@@ -134,23 +122,25 @@ function onlynumber(evt) {
                             </div>
                         </div>
 
+
+
+       
              
 <div class="form-group row" required>
 <label for="gestante" class="col-md-4 col-form-label text-md-right">{{ __('Gestante') }}</label>
 <div class="col-md-6">
 
          <select name="gestante" id="children-qnt" class="form-control">
-         <option value="0"></option>
+         <option value=""> </option>
          <option value="0">Não</option>
          <option value="1">Sim</option>
 
+      
          </select>
          <fieldset id="children">
          </fieldset>
  </div>
 </div>
-
-
 
 
 
@@ -182,7 +172,6 @@ var $this = jQuery(this),
 i = $this.val(),
 qnt = $children.find('label').length;
 
-
 if (qnt > i) {
 Children.remove(qnt - i);
 }
@@ -190,13 +179,10 @@ if (qnt < i) {
 Children.add(i - qnt);
 }
 });
-
 </script>
 
 
-
-
-                        
+                     
 <div class="form-group row" required>
 <label for="gestante" class="col-md-4 col-form-label text-md-right">{{ __('Acesso Venoso Central') }}</label>
 <div class="col-md-6">
@@ -246,7 +232,6 @@ acesso.add(i - qnt);
 }
 });
 </script>
-
 
 
 
@@ -301,7 +286,6 @@ contato.add(i - qnt);
 });
 </script>
 
-
 <!-- respiratoria e motivo da Respiratoria -->
 <div class="form-group row" required>
 <label for="respiratoria" class="col-md-4 col-form-label text-md-right">{{ __('Respiratória') }}</label>
@@ -355,31 +339,9 @@ respiratoria.add(i - qnt);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <input type="submit" class="btn btn-primary" onclick="validac()" Value="Cadastrar">
+                                <input type="submit" class="btn btn-primary" onclick="combo()" Value="Cadastrar">
                             </div>
                         </div>
                     </form>
@@ -388,11 +350,6 @@ respiratoria.add(i - qnt);
         </div>
     </div>
 </div>
-
-
-
-
-
 
 
             </div>
