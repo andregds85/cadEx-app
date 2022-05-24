@@ -5,7 +5,6 @@ use App\Models\Produto;
 use App\Http\Controllers\ProdutoController;
 ?>
 
-
 <SCRIPT> 
 <!--
 function valida()
@@ -24,8 +23,6 @@ return false;
     regform.preco.focus();
     return false;
 }
-
-
     
     if (document.regform.gestante.value.length == 0 )   
     {
@@ -34,7 +31,12 @@ return false;
     return false;
     }
 
-    
+
+
+
+
+
+
 
 
 
@@ -47,11 +49,12 @@ return false;
 
 return true;
 }
- 
+
+
+
+
 //-->
 </SCRIPT>
-
-
 
 <script>
 function onlynumber(evt) {
@@ -65,16 +68,6 @@ function onlynumber(evt) {
       if(theEvent.preventDefault) theEvent.preventDefault();
    }
 }
-</script>
-
-<script language="javascript" >
-    function combo() {
-        var comboNome = document.getElementById("gestantante");
-        if (comboNome.options[comboNome.selectedIndex].value == "" ){
-                alert("Selecione um nome antes de prosseguir");
-        }
-    }    
-</script>
 
 
 <div class="container">
@@ -150,9 +143,6 @@ function onlynumber(evt) {
          </fieldset>
  </div>
 </div>
-
-
-
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
@@ -312,10 +302,18 @@ contato.add(i - qnt);
 </div>
 
 
+
+
+
+
+
+
+
+
+
 <script type="text/javascript">
 var $respiratoriaQnt = jQuery('#respiratoria-qnt'),
 $respiratoria = jQuery('#respiratoria');
-
 
 var respiratoria = {};
 respiratoria.container = $respiratoria;
@@ -345,6 +343,17 @@ respiratoria.add(i - qnt);
 }
 });
 </script>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
