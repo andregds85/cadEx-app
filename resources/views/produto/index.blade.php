@@ -26,14 +26,23 @@ return false;
 }
 
 
+    
     if (document.regform.gestante.value.length == 0 )   
-     {
+    {
     alert('Falta escolher a Gestante');
     regform.gestante.focus();
     return false;
     }
 
     
+
+
+
+
+
+
+
+
 
 
 return true;
