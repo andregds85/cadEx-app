@@ -16,14 +16,17 @@ alert( "Preencha campo Nome com Nome Completo!" );
 regform.nome.focus();
 return false;
 }
-
  if(document.regform.preco.value.length < 4  || document.regform.preco.value.length > 10)
     {
     alert( "Preencha campo Preço corretamente Ex: 1,00 ");
     regform.preco.focus();
     return false;
-}
-    
+}    
+   
+
+
+
+    /* Valida do Formulário da Gestante */ 
     if (document.regform.gestante.value.length == 0 )   
     {
     alert('Falta escolher a Gestante');
@@ -31,28 +34,35 @@ return false;
     return false;
     }
 
+    if (document.regform.gestante.value==1  && document.regform.nasceDestino.value.length == 0 )
+    {
+    alert('Voce escolher Sim para a Gestante e Não preencheu quem Recebe a Gestante ');
+    regform.nasceDestino.focus();
+    return false;
+    }
+
+    
+   
 
 
+    /* Valida do Formulário Acesso Venoso Central */ 
+    if (document.regform.acessoVenosoCentral.value.length == 0 )   
+    {
+    alert('Falta Preencher Acesso Venoso Central ');
+    regform.acessoVenosoCentral.focus();
+    return false;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    
+    if (document.regform.acessoVenosoCentral.value==1  && document.regform.avcOnde.value.length == 0 )
+    {
+    alert('Voce escolher Sim para a acesso venoso central e Não preencheu o AVC onde ? ');
+    regform.avcOnde.focus();
+    return false;
+    }
 
 return true;
 }
-
-
-
-
 //-->
 </SCRIPT>
 
@@ -68,6 +78,7 @@ function onlynumber(evt) {
       if(theEvent.preventDefault) theEvent.preventDefault();
    }
 }
+</script>
 
 
 <div class="container">
@@ -94,7 +105,7 @@ function onlynumber(evt) {
                             </div>
                         </div>
 
-                         
+                        
                         
                         <!-- Campo Preço -->
                         <div class="row mb-3">
@@ -108,7 +119,6 @@ function onlynumber(evt) {
                                 @enderror
                             </div>
                         </div>
-
 
 
                         <!-- Campo quantidade -->
@@ -125,8 +135,7 @@ function onlynumber(evt) {
                         </div>
 
 
-
-       
+      
              
 <div class="form-group row" required>
 <label for="gestante" class="col-md-4 col-form-label text-md-right">{{ __('Gestante') }}</label>
@@ -148,7 +157,6 @@ function onlynumber(evt) {
 <script type="text/javascript">
 var $chidrenQnt = jQuery('#children-qnt'),
 $children = jQuery('#children');
-
 
 
 var Children = {};
@@ -187,7 +195,7 @@ Children.add(i - qnt);
 <div class="col-md-6">
 
          <select name="acessoVenosoCentral" id="acesso-qnt" class="form-control">
-         <option value="0">Falta Preencher</option>
+         <option value=""></option>
          <option value="0">Não</option>
          <option value="1">Sim</option>
 
