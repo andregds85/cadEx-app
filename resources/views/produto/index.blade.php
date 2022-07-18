@@ -3,6 +3,9 @@
 <?php 
 use App\Models\Produto;
 use App\Http\Controllers\ProdutoController;
+
+use App\Http\Controllers\recebeController;
+
 ?>
 
 <SCRIPT> 
@@ -21,11 +24,8 @@ return false;
     alert( "Preencha campo Preço corretamente Ex: 1,00 ");
     regform.preco.focus();
     return false;
-}    
+    }    
    
-
-
-
     /* Valida do Formulário da Gestante */ 
     if (document.regform.gestante.value.length == 0 )   
     {
@@ -41,11 +41,7 @@ return false;
     return false;
     }
 
-    
-   
-
-
-    /* Valida do Formulário Acesso Venoso Central */ 
+      /* Valida do Formulário Acesso Venoso Central */ 
     if (document.regform.acessoVenosoCentral.value.length == 0 )   
     {
     alert('Falta Preencher Acesso Venoso Central ');
@@ -313,12 +309,6 @@ contato.add(i - qnt);
 
 
 
-
-
-
-
-
-
 <script type="text/javascript">
 var $respiratoriaQnt = jQuery('#respiratoria-qnt'),
 $respiratoria = jQuery('#respiratoria');
@@ -353,19 +343,7 @@ respiratoria.add(i - qnt);
 </script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-                        <div class="row mb-0">
+                     <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <input type="submit" class="btn btn-primary" onclick="combo()" Value="Cadastrar">
                             </div>
@@ -376,6 +354,25 @@ respiratoria.add(i - qnt);
         </div>
     </div>
 </div>
+
+
+
+<br>
+<br>
+<br>
+<!--
+-->
+
+<?php 
+$v1="dados";
+$v2="Telefone da Pessoa 2";
+?>
+
+
+
+<a class="btn btn-info" href="{{ url('recebe', ['v1' => $v1, 'v2' => $v2]) }}">Inserir Complemento no Mapa</a>
+
+
 
 
             </div>

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
-
+use App\Http\Controllers\recebeController;
 
 
 Route::get('/', function () {
@@ -10,16 +10,15 @@ Route::get('/', function () {
 });
 
 
-
-
 Route::group(['middleware' => ['auth']], function() {
 
     Route::resource('produto', ProdutoController::class);
+    Route::get('/recebe/{v1}/{v2?}', [recebeController::class,'index']);
+
 
 
 
 });
-
 
 
 
